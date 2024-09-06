@@ -29,14 +29,30 @@ Pour déchiffrer un message, on opère de façon inverse, chaque caractère du m
 
 ## Partie 1
 
-1. Écrivez la fonction `setup()`.
-2. Définissez une variable globale `key` correspondant à la clé. On la fixe à la valeur `6`.
-3. Dans la fonction `loop()` :
+1. Écrivez la fonction `setup()`
+```C++
+void setup()
+{
+	Serial.begin(9600);
+}
+```
+3. Définissez une variable globale `key` correspondant à la clé. On la fixe à la valeur `6`.
+```C++
+void setup()
+{
+	Serial.begin(9600);
+  	int var = 'A';
+  	int key = 6;
+    char character = var + key;
+  Serial.print(character);
+}
+```
+5. Dans la fonction `loop()` :
     1. Récupérez le premier caractère du buffer.
     2. Ajoutez-y la valeur de la clé.
     3. Affichez le résultat.
     4. Pour l'exemple `hello` vous devez obtenir `nkrru`.
-4. Que se passe-t-il si le message est `bonjour` ? Proposez une amélioration de votre code permettant d'obtenir un message chiffré correctement.
+6. Que se passe-t-il si le message est `bonjour` ? Proposez une amélioration de votre code permettant d'obtenir un message chiffré correctement.
 
 ## Partie 2
 
